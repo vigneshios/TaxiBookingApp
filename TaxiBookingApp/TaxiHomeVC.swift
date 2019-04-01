@@ -18,6 +18,7 @@ class TaxiHomeVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var carsList: CarsList!
     @IBOutlet weak var pickUpLocationLbl: UILabel!
     @IBOutlet weak var destinationBox: UIView!
+    @IBOutlet weak var destinationLbl: UILabel!
     
     
     
@@ -29,10 +30,18 @@ class TaxiHomeVC: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap = UIGestureRecognizer(target: self, action: #selector(TaxiHomeVC.destinationTapped))
+        destinationBox.addGestureRecognizer(tap)
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         setUpMapVW()
+    }
+    
+    @objc func destinationTapped() {
+        let autoCompleteVC = GMSAutocompleteViewController()
+        autoCompleteVC.delegate = self
+        self.present(autoCompleteVC, animated: true, completion: nil)
     }
     
     func setUpMapVW() {
@@ -58,9 +67,34 @@ class TaxiHomeVC: UIViewController, CLLocationManagerDelegate {
         taxiMapVw.updateMapCamera(location: currentLocation)
         getAddressFromCoordinates(location: currentLocation.coordinate)
     }
-    
-   
-    
-    
 
+}
+
+
+extension TaxiHomeVC: GMSAutocompleteViewControllerDelegate {
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        destinationLbl.text = place.formattedAddress
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print("Error = \(error)")
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
 }

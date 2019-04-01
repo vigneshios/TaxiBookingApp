@@ -10,17 +10,26 @@ import UIKit
 
 class CarsList: UICollectionView, UICollectionViewDataSource,UICollectionViewDelegate {
     
+    var cars = ["UberGo", "Premier", "UberSUV"]
+    
+    override func awakeFromNib() {
+        self.delegate = self
+        self.dataSource = self
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return cars.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarCell", for: indexPath) as? CarCell
-        return cell!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarCell", for: indexPath) as! CarCell
+        cell.carTypeLbl.text = cars[indexPath.row]
+        cell.carImage.image = UIImage(named: cars[indexPath.row])
+        return cell
     }
     
 
