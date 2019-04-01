@@ -8,21 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		18346BB122509E98009E858C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18346BB022509E98009E858C /* AppDelegate.swift */; };
-		18346BB322509E98009E858C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18346BB222509E98009E858C /* ViewController.swift */; };
 		18346BB622509E98009E858C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18346BB422509E98009E858C /* Main.storyboard */; };
 		18346BB822509E9C009E858C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18346BB722509E9C009E858C /* Assets.xcassets */; };
 		18346BBB22509E9C009E858C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18346BB922509E9C009E858C /* LaunchScreen.storyboard */; };
 		2EF6586A4AEA5E333BFC2C40 /* Pods_TaxiBookingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D326F843C4D91B614FE90460 /* Pods_TaxiBookingApp.framework */; };
+		2F2E790222522473000D645E /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E790122522473000D645E /* CarCell.swift */; };
+		2F2E79062252338A000D645E /* CarsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E79052252338A000D645E /* CarsList.swift */; };
+		2F2E790822523533000D645E /* TaxiHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E790722523533000D645E /* TaxiHomeVC.swift */; };
+		2F2E790A2252360F000D645E /* TaxiMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E79092252360F000D645E /* TaxiMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18346BAD22509E98009E858C /* TaxiBookingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaxiBookingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18346BB022509E98009E858C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18346BB222509E98009E858C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18346BB522509E98009E858C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18346BB722509E9C009E858C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18346BBA22509E9C009E858C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18346BBC22509E9C009E858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F2E790122522473000D645E /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		2F2E79052252338A000D645E /* CarsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsList.swift; sourceTree = "<group>"; };
+		2F2E790722523533000D645E /* TaxiHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiHomeVC.swift; sourceTree = "<group>"; };
+		2F2E79092252360F000D645E /* TaxiMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxiMapView.swift; sourceTree = "<group>"; };
 		40DA616F7D7856C7842AAC5B /* Pods-TaxiBookingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBookingApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBookingApp/Pods-TaxiBookingApp.debug.xcconfig"; sourceTree = "<group>"; };
 		84A3D9CC541986C8E658F228 /* Pods-TaxiBookingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaxiBookingApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaxiBookingApp/Pods-TaxiBookingApp.release.xcconfig"; sourceTree = "<group>"; };
 		D326F843C4D91B614FE90460 /* Pods_TaxiBookingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaxiBookingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				18346BB022509E98009E858C /* AppDelegate.swift */,
-				18346BB222509E98009E858C /* ViewController.swift */,
+				2F2E79092252360F000D645E /* TaxiMapView.swift */,
+				2F2E790722523533000D645E /* TaxiHomeVC.swift */,
+				2F2E79052252338A000D645E /* CarsList.swift */,
+				2F2E790122522473000D645E /* CarCell.swift */,
 				18346BB422509E98009E858C /* Main.storyboard */,
 				18346BB722509E9C009E858C /* Assets.xcassets */,
 				18346BB922509E9C009E858C /* LaunchScreen.storyboard */,
@@ -202,8 +211,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18346BB322509E98009E858C /* ViewController.swift in Sources */,
+				2F2E790222522473000D645E /* CarCell.swift in Sources */,
+				2F2E790822523533000D645E /* TaxiHomeVC.swift in Sources */,
+				2F2E79062252338A000D645E /* CarsList.swift in Sources */,
 				18346BB122509E98009E858C /* AppDelegate.swift in Sources */,
+				2F2E790A2252360F000D645E /* TaxiMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

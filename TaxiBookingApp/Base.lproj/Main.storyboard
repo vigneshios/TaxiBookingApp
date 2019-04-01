@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ARO-AN-Nze">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,27 +10,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--UBER-->
         <scene sceneID="283-3Y-mIg">
             <objects>
-                <viewController id="Q9E-Iy-FNf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaxiHomeVC" id="Q9E-Iy-FNf" customClass="TaxiHomeVC" customModule="TaxiBookingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I2P-Mv-BNy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-AY-nLB" userLabel="mapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="473"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-AY-nLB" userLabel="mapView" customClass="TaxiMapView" customModule="TaxiBookingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.6705882353" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_marker.png" translatesAutoresizingMaskIntoConstraints="NO" id="AVh-kf-JoM">
-                                <rect key="frame" x="172.5" y="285.5" width="30" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="AVh-kf-JoM">
+                                <rect key="frame" x="172.5" y="221.5" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6I6-M0-hT8"/>
                                     <constraint firstAttribute="width" constant="30" id="Hya-zj-Pmy"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POo-CO-DdQ">
-                                <rect key="frame" x="340" y="504" width="30" height="30"/>
+                                <rect key="frame" x="340" y="440" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dUH-Og-UjT"/>
                                     <constraint firstAttribute="width" constant="30" id="uLT-cx-NWX"/>
@@ -38,7 +38,7 @@
                                 <state key="normal" image="recenter"/>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i6u-aw-REO" userLabel="PickUpView">
-                                <rect key="frame" x="10" y="74" width="355" height="50"/>
+                                <rect key="frame" x="10" y="10" width="355" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4d-Hp-xfd">
                                         <rect key="frame" x="8" y="8" width="55.5" height="18"/>
@@ -62,7 +62,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSq-ZI-2TB" userLabel="DestinationView">
-                                <rect key="frame" x="10" y="144" width="355" height="50"/>
+                                <rect key="frame" x="10" y="80" width="355" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EQ-Na-7wz">
                                         <rect key="frame" x="8" y="8" width="77.5" height="18"/>
@@ -87,7 +87,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D86-PW-vbg" userLabel="Ride Now">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="563" width="375" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="FL5-zn-wcB"/>
@@ -97,8 +97,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hOg-Mh-T1S">
-                                <rect key="frame" x="0.0" y="539" width="375" height="86"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hOg-Mh-T1S" customClass="CarsList" customModule="TaxiBookingApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="475" width="375" height="86"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T6a-lo-FIa">
                                     <size key="itemSize" width="84" height="84"/>
@@ -107,28 +107,28 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aGu-0n-AjA">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarCell" id="aGu-0n-AjA" customClass="CarCell" customModule="TaxiBookingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XZs-F4-IdK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-fiat-500-50" translatesAutoresizingMaskIntoConstraints="NO" id="XZs-F4-IdK">
                                                     <rect key="frame" x="24.5" y="24.5" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="35" id="1fI-NK-kCg"/>
                                                         <constraint firstAttribute="height" constant="35" id="dpU-dr-wkj"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvC-uD-DgN">
-                                                    <rect key="frame" x="24.5" y="0.0" width="35.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvC-uD-DgN">
+                                                    <rect key="frame" x="32.5" y="5" width="19.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq7-px-3Zt">
-                                                    <rect key="frame" x="24.5" y="54.5" width="35.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs.85.34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq7-px-3Zt">
+                                                    <rect key="frame" x="14.5" y="56.5" width="55.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -136,13 +136,18 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="Tq7-px-3Zt" secondAttribute="bottom" constant="2" id="6p1-nc-vW0"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Tq7-px-3Zt" secondAttribute="bottom" id="6p1-nc-vW0"/>
                                             <constraint firstItem="Tq7-px-3Zt" firstAttribute="centerX" secondItem="aGu-0n-AjA" secondAttribute="centerX" id="DXJ-f4-iAg"/>
                                             <constraint firstItem="XZs-F4-IdK" firstAttribute="centerX" secondItem="aGu-0n-AjA" secondAttribute="centerX" id="Hrz-n0-OKw"/>
-                                            <constraint firstItem="mvC-uD-DgN" firstAttribute="top" secondItem="aGu-0n-AjA" secondAttribute="top" id="ksB-O5-A5F"/>
+                                            <constraint firstItem="mvC-uD-DgN" firstAttribute="top" secondItem="aGu-0n-AjA" secondAttribute="top" constant="5" id="ksB-O5-A5F"/>
                                             <constraint firstItem="XZs-F4-IdK" firstAttribute="centerY" secondItem="aGu-0n-AjA" secondAttribute="centerY" id="oLp-GO-4P7"/>
                                             <constraint firstItem="mvC-uD-DgN" firstAttribute="centerX" secondItem="aGu-0n-AjA" secondAttribute="centerX" id="xXV-8h-UOr"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="carFareLbl" destination="Tq7-px-3Zt" id="GKe-Te-uUU"/>
+                                            <outlet property="carImage" destination="XZs-F4-IdK" id="zc6-Fu-waD"/>
+                                            <outlet property="carTypeLbl" destination="mvC-uD-DgN" id="1SF-EK-UPc"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -173,7 +178,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HFR-sP-BSS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="S7q-eL-dxt"/>
+                    <navigationItem key="navigationItem" title="UBER" id="S7q-eL-dxt"/>
+                    <connections>
+                        <outlet property="carsList" destination="hOg-Mh-T1S" id="Mt3-6p-LhL"/>
+                        <outlet property="destinationBox" destination="VSq-ZI-2TB" id="5UV-yc-pG6"/>
+                        <outlet property="pickUpLocationLbl" destination="IYb-gf-XXx" id="UfW-JW-BU3"/>
+                        <outlet property="taxiMapVw" destination="XUX-AY-nLB" id="abF-bw-m48"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjX-jc-q6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,7 +195,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ARO-AN-Nze" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pjp-wI-IBe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Pjp-wI-IBe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -199,7 +210,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="default_marker.png" width="21" height="38"/>
+        <image name="icons8-fiat-500-50" width="50" height="50"/>
+        <image name="pin" width="50" height="50"/>
         <image name="recenter" width="32" height="32"/>
     </resources>
 </document>
